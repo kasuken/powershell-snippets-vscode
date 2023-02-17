@@ -20,6 +20,10 @@ Visual Studio Code > 1.5
 
 ## Release Notes
 
+### 1.0.2
+
+- Add Icon for Marketplace
+
 ### 1.0.1
 
 Basic snippets for PowerShell
