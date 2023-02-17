@@ -1,1 +1,1 @@
-# powershell-snippets-vscode
+# PowerShell Snippets Extesion for Visual Studio Code
