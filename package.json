@@ -1,0 +1,20 @@
+{
+  "name": "powershell-snippets",
+  "displayName": "PowerShell Snippets",
+  "description": "A collection of PowerShell snippets for Visual Studio Code",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "powershell",
+        "path": "./snippets/snippets.code-snippets"
+      }
+    ]
+  }
+}

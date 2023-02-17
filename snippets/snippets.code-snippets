@@ -1,0 +1,286 @@
+{
+  "Condition statement": {
+    "prefix": "cond",
+    "body": [
+      "$1 { $0; break }"
+    ],
+    "description": "Switch condition statement"
+  },
+  "Condition single quoted string statement": {
+    "prefix": "condsqstr",
+    "body": [
+      "'$1' { $0; break }"
+    ],
+    "description": "Switch condition single quoted string statement"
+  },
+  "Condition double quoted string statement": {
+    "prefix": "conddqstr",
+    "body": [
+      "\"$1\" { $0; break }"
+    ],
+    "description": "Switch condition double quoted string statement"
+  },
+  "Condition expression statement": {
+    "prefix": "condexpr",
+    "body": [
+      "{$1} { $0; break }"
+    ],
+    "description": "Switch condition expression statement"
+  },
+  "Do...while loop": {
+    "prefix": "dowh",
+    "body": [
+      "do {",
+      "\t$0",
+      "} while (${1:expression});"
+    ],
+    "description": "Do...while loop"
+  },
+  "Do...until loop": {
+    "prefix": "doun",
+    "body": [
+      "do {",
+      "\t$0",
+      "} until (${1:expression});"
+    ],
+    "description": "Do...until loop"
+  },
+  "Else statement": {
+    "prefix": "else",
+    "body": [
+      "else {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Else statement"
+  },
+  "ElseIf statement": {
+    "prefix": "elseif",
+    "body": [
+      "elseif (${1:expression}) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Elseif statement"
+  },
+  "Foreach statement": {
+    "prefix": "foreach",
+    "body": [
+      "foreach ($${1:item} in $${2:collection}) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Foreach statement"
+  },
+  "For loop": {
+    "prefix": "for",
+    "body": [
+      "for ($${1:ndx} = 0; $${1:ndx} -lt $${2:collection}.Count; $${1:ndx}++) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "For loop"
+  },
+  "If statement": {
+    "prefix": "if",
+    "body": [
+      "if (${1:expression}) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "If statement"
+  },
+  "Reverse for loop": {
+    "prefix": "forr",
+    "body": [
+      "for ($${1:ndx} = $${2:collection}.Count - 1; $${1:ndx} -ge 0; $${1:ndx}--) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Reverse for loop"
+  },
+  "Switch statement": {
+    "prefix": "switch",
+    "body": [
+      "switch (${1:expression}) {",
+      "\t${2:condition} { $0; break }",
+      "\tDefault {}",
+      "}"
+    ],
+    "description": "Switch statement"
+  },
+  "Try catch": {
+    "prefix": "try",
+    "body": [
+      "try {",
+      "\t$0",
+      "}",
+      "catch {",
+      "\t# Exception is stored in the automatic variable \\$_",
+      "\t",
+      "}"
+    ],
+    "description": "Try catch"
+  },
+  "Try catch finally": {
+    "prefix": "trycf",
+    "body": [
+      "try {",
+      "\t$0",
+      "}",
+      "catch {",
+      "\t# Exception is stored in the automatic variable \\$_",
+      "\t",
+      "}",
+      "finally {",
+      "\t",
+      "}"
+    ],
+    "description": "Try catch finally"
+  },
+  "Try finally": {
+    "prefix": "tryf",
+    "body": [
+      "try {",
+      "\t$0",
+      "}",
+      "finally {",
+      "\t",
+      "}"
+    ],
+    "description": "Try finally"
+  },
+  "While loop": {
+    "prefix": "while",
+    "body": [
+      "while (${1:expression}) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "While loop"
+  },
+  "Class": {
+    "prefix": "class",
+    "body": [
+      "class ${1:name} {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Class"
+  },
+  "Enum": {
+    "prefix": "enum",
+    "body": [
+      "enum ${1:name} {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Enum"
+  },
+  "Method": {
+    "prefix": "meth",
+    "body": [
+      "[${1:return_type}] ${2:name}() {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Method"
+  },
+  "Property": {
+    "prefix": "prop",
+    "body": [
+      "[${1:type}] $${0:name}"
+    ],
+    "description": "Class property"
+  },
+  "Property hidden": {
+    "prefix": "proph",
+    "body": [
+      "hidden [${1:type}] $${0:name}"
+    ],
+    "description": "Hidden class property"
+  },
+  "Function": {
+    "prefix": "func",
+    "body": [
+      "function ${1:name}() {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Function"
+  },
+  "Function advanced": {
+    "prefix": "funcadv",
+    "body": [
+      "<#",
+      ".SYNOPSIS",
+      "\tShort description",
+      ".DESCRIPTION",
+      "\tLong description",
+      ".EXAMPLE",
+      "\tExample of how to use this cmdlet",
+      ".EXAMPLE",
+      "\tAnother example of how to use this cmdlet",
+      "#>",
+      "function ${1:verb}-${2:noun} {",
+      "\t[CmdletBinding()]",
+      "\t[OutputType([${3:type}])]",
+      "\tparam(",
+      "\t\t[Parameter(Mandatory=\\$true)]",
+      "\t\t[string]",
+      "\t\t$${4:parameter_name}",
+      "\t)",
+      "\t",
+      "\tbegin {",
+      "\t}",
+      "\t",
+      "\tprocess {",
+      "\t\t$0",
+      "\t}",
+      "\t",
+      "\tend {",
+      "\t}",
+      "}"
+    ],
+    "description": "Advanced function"
+  },
+  "Help": {
+    "prefix": "help",
+    "body": [
+      "<#",
+      ".SYNOPSIS",
+      "\tShort description",
+      ".DESCRIPTION",
+      "\tLong description",
+      ".PARAMETER Path",
+      "\tSpecifies a path to one or more locations.",
+      ".PARAMETER LiteralPath",
+      "\tSpecifies a path to one or more locations. Unlike Path, the value of LiteralPath is used exactly as it",
+      "\tis typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose",
+      "\tit in single quotation marks. Single quotation marks tell Windows PowerShell not to interpret any",
+      "\tcharacters as escape sequences.",
+      ".PARAMETER InputObject",
+      "\tSpecifies the object to be processed.  You can also pipe the objects to this command.",
+      ".EXAMPLE",
+      "\tPS>",
+      "\tExample of how to use this cmdlet",
+      ".EXAMPLE",
+      "\tPS>",
+      "\tAnother example of how to use this cmdlet",
+      ".INPUTS",
+      "\tInputs to this cmdlet (if any)",
+      ".OUTPUTS",
+      "\tOutput from this cmdlet (if any)",
+      ".NOTES",
+      "\tGeneral notes",
+      ".COMPONENT",
+      "\tThe component this cmdlet belongs to",
+      ".ROLE",
+      "\tThe role this cmdlet belongs to",
+      ".FUNCTIONALITY",
+      "\tThe functionality that best describes this cmdlet",
+      "#>"
+    ],
+    "description": "Help comment block"
+  }
+}
