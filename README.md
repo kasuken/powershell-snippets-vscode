@@ -18,6 +18,8 @@ and much more...
 
 Visual Studio Code > 1.5
 
+Restart VS Code after the installation.
+
 ## Release Notes
 
 ### 1.0.2
